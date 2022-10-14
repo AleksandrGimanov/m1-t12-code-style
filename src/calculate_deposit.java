@@ -1,22 +1,22 @@
 import java.util.Scanner;
 
-public class DepositCalculator{
+public class DepositCalculator{   // так же стоит переименовать название файла идентично названию класса
 
-    double calculateComplexPercent(double amount, double yearRate, int depositPeriod) {
-        double pay = amount * Math.pow((1 + yearRate / 12), 12 * depositPeriod);
+    double calculateComplexPercent(double amount, double yearRate, int depositPeriod) { // переменная yearRate является константой, она всегда имеет одно значение
+        double pay = amount * Math.pow((1 + yearRate / 12), 12 * depositPeriod);        // можно избавится от нее
         return rnd(pay, 2);
     }
 
-    double calculateSimplePercent(double amount, double yearRate, int depositPeriod) {
+    double calculateSimplePercent(double amount, double yearRate, int depositPeriod) { // yearRate
         return rnd(amount + amount * yearRate * depositPeriod, 2);
     }
 
-    double rnd(double value, int places) {
+    double rnd(double value, int places) { // Стоит задуматься над переименованием метода
         double ScaLe = Math.pow(10, places);
         return Math.round(value * ScaLe)/ ScaLe;
     }
 
-    void doImportantJob() {
+    void doImportantJob() {  // тоже самое, стоит подумать о переименование метода
         int period;
         int action;
         int amount;
